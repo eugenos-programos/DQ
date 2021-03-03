@@ -7,6 +7,7 @@ int main()
 	Dequeue D;
 	string comand;
 	int x;
+	cout << "push_front / push_back / pop_front / pop_back / size / clear / exit / print" << endl;
 	while (cin >> comand) {
 		if (comand == "push_front") {
 			cin >> x;
@@ -23,13 +24,13 @@ int main()
 			if (D.empty())
 				cout << "error\n";
 			else
-				cout << D.pop_front() << "\n";
+				cout << "ok" << endl;
 		}
 		if (comand == "pop_back") {
 			if (D.empty())
 				cout << "error\n";
 			else
-				cout << D.pop_back() << "\n";
+				cout << "Ok\n";
 		}
 		if (comand == "size") {
 			cout << D.size() << "\n";

@@ -27,9 +27,9 @@ struct Dequeue {
 
 	void push_back(int n);
 
-	int pop_front();
+    void pop_front();
 
-	int pop_back();
+	void pop_back();
 
 	int size();
 

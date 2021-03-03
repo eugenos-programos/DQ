@@ -75,22 +75,22 @@ using namespace std;
 			add_last();		// добавляем в конец списка новый дек
 	}
 
-	int Dequeue::pop_front() {
+	void Dequeue::pop_front() {
 		Size--;
 		if (f == Max - 1)
 			delete_first();
 		else
 			f++;
-		return (first->dequeue)[f];
+		(first->dequeue)[f] = 0;
 	}
 
-	int Dequeue::pop_back() {
+	void Dequeue::pop_back() {
 		Size--;
 		if (l == 0)
 			delete_last();
 		else
 			l--;
-		return (last->dequeue)[l];
+		(last->dequeue)[l] = 0;
 	}
 
 	int Dequeue::size() {
