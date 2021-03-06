@@ -11,7 +11,7 @@ using namespace std;
 	}
 
 	void node::print() {
-		cout << "RESULT - ";
+		cout << "RESULT - | ";
 		for (int k = 0; k < Max; k++) {
 			if(dequeue[k] != 0)
 				cout << dequeue[k] << " | ";

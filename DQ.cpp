@@ -10,34 +10,39 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	Dequeue D;
+	if (argc == 0)cout << "error";
 	if (string(argv[1]) == "testing_for_push_front") {
 		D.push_front(1);
 		D.push_front(2);
-		D.push_front(3);      // 3 2 1
+		D.push_front(3);      // | 4 | 3 | 2 | 1 |
+		D.push_front(4);
 		D.print();
 		D.clear();
 	}
 	if (string(argv[1]) == "testing_for_push_back") {
 		D.push_back(1);
 		D.push_back(2);
-		D.push_back(3);        // 1 2 3
+		D.push_back(3);        // | 1 | 2 | 3 | 4 |
+		D.push_back(4);
 		D.print();
 		D.clear();
 	}
 	if (string(argv[1]) == "testing_for_pop_front") {	
 		D.push_back(1);
 		D.push_back(2);
-		D.push_back(3);   
-		D.pop_front();   // 2 3
+		D.push_front(3);   
+		D.push_front(4);   // | 4 | 3 | 1 | 2 |
+		D.pop_front();         // | 3 | 1 | 2 |
 		D.print();
 		D.clear();
 	}
 	if (string(argv[1]) == "testing_for_pop_back") {
 		D.push_back(1);
 		D.push_back(2);
-		D.push_back(3);
-		D.pop_back();
-		D.print();           // 1 2
+		D.push_front(3);
+		D.push_front(4);   // | 4 | 3 | 1 | 2 |
+		D.pop_back();      // | 4 | 3 | 1 |
+		D.print();           
 		D.clear();
 	}
 	if (string(argv[1]) == "menu") {
