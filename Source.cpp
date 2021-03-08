@@ -2,8 +2,6 @@
 #include "Header.h"
 using namespace std;
 
-
-
 	node::node(node* Pr, node* Ne) {
 		prev = Pr;
 		next = Ne;

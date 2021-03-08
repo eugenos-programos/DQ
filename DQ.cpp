@@ -1,8 +1,6 @@
 ﻿#include <iostream>
 #include <string>
 #include <cstring>
-#include <stdio.h>
-#include <stdlib.h>
 #include "Header.h"
 
 using namespace std;
@@ -10,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	Dequeue D;
-	if (argc == 0)cout << "error";
+	if (argc == 0 || argc == 1)cout << "error";
 	if (string(argv[1]) == "testing_for_push_front") {
 		D.push_front(1);
 		D.push_front(2);
