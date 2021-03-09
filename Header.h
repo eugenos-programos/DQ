@@ -1,5 +1,5 @@
 #pragma once
-#define Max 1000
+#define Max 100
 
 struct node {
 	node* prev;

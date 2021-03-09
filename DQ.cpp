@@ -1,47 +1,40 @@
 ﻿#include <iostream>
 #include <string>
 #include <cstring>
+#include <stdlib.h>
 #include "Header.h"
 
 using namespace std;
+Dequeue D;
 
 int main(int argc, char* argv[])
 {
-	Dequeue D;
-	if (argc == 0 || argc == 1)cout << "error";
-	if (string(argv[1]) == "testing_for_push_front") {
-		D.push_front(1);
-		D.push_front(2);
-		D.push_front(3);      // | 4 | 3 | 2 | 1 |
-		D.push_front(4);
+	D.push_back(2);
+	D.push_back(4);
+	D.push_front(2);
+	D.push_front(3);   // D = 3 2 2 4
+	if (argc == 0 || argc == 1)exit(1);
+	if (string(argv[1]) == "push_front") {
+		if (argv[2] == NULL)exit(1);
+		int n;
+		n = atoi(string(argv[2]).c_str());
+		D.push_front(n);          // D = n 3 2 2 4
 		D.print();
-		D.clear();
 	}
-	if (string(argv[1]) == "testing_for_push_back") {
-		D.push_back(1);
-		D.push_back(2);
-		D.push_back(3);        // | 1 | 2 | 3 | 4 |
-		D.push_back(4);
+	if (string(argv[1]) == "push_back") {
+		if (argv[2] == NULL)exit(1);
+		int n;
+		n = atoi(string(argv[2]).c_str());
+		D.push_front(n);          // D = 3 2 2 4 n
 		D.print();
-		D.clear();
 	}
-	if (string(argv[1]) == "testing_for_pop_front") {	
-		D.push_back(1);
-		D.push_back(2);
-		D.push_front(3);   
-		D.push_front(4);   // | 4 | 3 | 1 | 2 |
-		D.pop_front();         // | 3 | 1 | 2 |
+	if (string(argv[1]) == "pop_front") {	
+		D.pop_front();          // D = 2 2 4
 		D.print();
-		D.clear();
 	}
-	if (string(argv[1]) == "testing_for_pop_back") {
-		D.push_back(1);
-		D.push_back(2);
-		D.push_front(3);
-		D.push_front(4);   // | 4 | 3 | 1 | 2 |
-		D.pop_back();      // | 4 | 3 | 1 |
-		D.print();           
-		D.clear();
+	if (string(argv[1]) == "pop_front") {
+		D.pop_front();          // D = 2 2 4
+		D.print();
 	}
 	if (string(argv[1]) == "menu") {
 		int comand;
