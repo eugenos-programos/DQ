@@ -2,7 +2,7 @@
 #include <string>
 #include <cstring>
 #include <stdlib.h>
-#include "Header.h"
+#include "libr.h"
 
 using namespace std;
 Dequeue D;
@@ -59,7 +59,6 @@ int main(int argc, char* argv[])
 				D.push_back(x);
 				cout << "ok\n";
 			}
-
 			if (comand == 3) {
 				if (D.empty())
 					cout << "error\n";
@@ -67,7 +66,6 @@ int main(int argc, char* argv[])
 					cout << "ok" << endl;
 					D.pop_front();
 				}
-
 			}
 			if (comand == 4) {
 				if (D.empty())

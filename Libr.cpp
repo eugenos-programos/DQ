@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Header.h"
+#include "libr.h"
 using namespace std;
 
 	node::node(node* Pr, node* Ne) {
@@ -93,9 +93,7 @@ using namespace std;
 		(last->dequeue)[l] = 0;
 	}
 
-	int Dequeue::size() {
-		return Size;
-	}
+	int Dequeue::size() { return Size; }
 
 	bool Dequeue::empty() { return (Size == 0); }
 
